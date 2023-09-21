@@ -1,13 +1,26 @@
 package org.example.Classes;
 
+import org.example.Board;
+import org.example.Location;
+
+import java.util.ArrayList;
+
 public abstract class ChessPiece {
 
-    private boolean isWhite;
+    protected String symbol;
+    protected String color;
+    protected boolean moved;
+    protected Location location;
 
-    public ChessPiece(boolean isWhite) {
-        this.isWhite = isWhite;
+    public abstract boolean checkMove(Location var1, Board var2);
+
+    public ChessPiece(String symbol, String color, Location l) {
+        this.symbol = symbol;
+        this.color = color;
+        this.location = l;
+        this.moved = false;
     }
 
-    public abstract boolean validateMove(int sourceX, int sourceY, int destX, int destY, ChessPiece[][] board);
+
 
 }

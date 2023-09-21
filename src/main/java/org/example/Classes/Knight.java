@@ -1,4 +1,17 @@
 package org.example.Classes;
 
-public class Knight {
+import org.example.Board;
+import org.example.Location;
+
+public class Knight extends ChessPiece {
+
+
+    public Knight(String symbol, String color, Location l) {
+        super(symbol, color, l);
+    }
+
+    @Override
+    public boolean checkMove(Location var1, Board var2) {
+        return false;
+    }
 }
