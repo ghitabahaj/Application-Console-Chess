@@ -15,7 +15,7 @@ public class Board {
 
      private void setup() {
           for(int i = 0; i < 8; ++i) {
-               this.board[i][1] = new Pawn("♟", "WHITE", new Location(i, 1));
+               this.board[i][1] = new Pawn("♙", "WHITE", new Location(i, 1));
                this.board[i][6] = new Pawn("♙", "BLACK", new Location(i, 6));
           }
 
@@ -39,6 +39,45 @@ public class Board {
 
      public ChessPiece[][] getBoard() {
           return this.board;
+     }
+
+     public ChessPiece getPieceAt(Location location) {
+          if (isValidLocation(location)) {
+               return board[location.x][location.y];
+          } else {
+               // Handle invalid location (e.g., out of bounds)
+               return null;
+          }
+     }
+
+     private boolean isValidLocation(Location location) {
+          return location.x >= 0 && location.x < 8 && location.y >= 0 && location.y < 8;
+     }
+
+     public boolean movePiece(Location from, Location to, String currentPlayerColor) {
+          ChessPiece pieceToMove = getPieceAt(from);
+          ChessPiece targetPiece = getPieceAt(to);
+
+          if (pieceToMove == null || !pieceToMove.getColor().equals(currentPlayerColor)) {
+               // The piece to move is either null or doesn't belong to the current player
+               return false;
+          }
+
+          if (pieceToMove.checkMove(to, this)) {
+               // The move is valid according to the specific chess piece's rules
+               // Check if the target square is empty or contains an opponent's piece
+               if (targetPiece == null || !targetPiece.getColor().equals(currentPlayerColor)) {
+                    // Move the piece to the target location
+                    board[to.getX()][to.getY()] = pieceToMove;
+                    board[from.getX()][from.getY()] = null;
+                    // Update the piece's location
+                    pieceToMove.setLocation(to);
+                    // Mark the piece as moved
+                    pieceToMove.setMoved(true);
+                    return true;
+               }
+          }
+          return false; // Invalid move
      }
 
 

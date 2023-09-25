@@ -21,6 +21,22 @@ public abstract class ChessPiece {
         this.moved = false;
     }
 
+    public String getSymbol() {
+        return this.symbol;
+    }
 
+    public String getColor(){ return this.color;}
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+
+    public boolean hasMoved() {
+        return this.moved;
+    }
+
+    public void setMoved(boolean moved) {
+        this.moved = moved;
+    }
 
 }
