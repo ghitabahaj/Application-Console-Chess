@@ -3,6 +3,9 @@ package org.example;
 import org.example.Classes.ChessPiece;
 
 import java.util.Scanner;
+import javax.swing.*;
+import java.awt.*;
+
 
 public class Menu {
 
@@ -122,7 +125,7 @@ public class Menu {
                 if (board[col][row] != null) {
                     System.out.print(" " + board[col][row].getSymbol() + " ");
                 } else {
-                    System.out.print(" . ");
+                    System.out.print(" .  ");
                 }
             }
             System.out.println();

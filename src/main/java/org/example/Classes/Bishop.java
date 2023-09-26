@@ -9,7 +9,10 @@ public class Bishop extends ChessPiece {
     public Bishop(String symbol, String color, Location l) {
         super(symbol, color, l);
     }
-
+    @Override
+    public String getType() {
+        return "Bishop";
+    }
 
     @Override
     public boolean checkMove(Location destination, Board board) {

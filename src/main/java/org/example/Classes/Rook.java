@@ -8,7 +8,10 @@ public class Rook extends ChessPiece {
     public Rook(String symbol, String color, Location l) {
         super(symbol, color, l);
     }
-
+    @Override
+    public String getType() {
+        return "Rook";
+    }
     @Override
     public boolean checkMove(Location targetLocation, Board board) {
         int deltaX = Math.abs(targetLocation.x - this.location.x);

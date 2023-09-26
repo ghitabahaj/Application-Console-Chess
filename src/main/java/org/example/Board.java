@@ -13,10 +13,10 @@ public class Board {
           this.setup();
      }
 
-     private void setup() {
+     void setup() {
           for(int i = 0; i < 8; ++i) {
                this.board[i][1] = new Pawn("♙", "WHITE", new Location(i, 1));
-               this.board[i][6] = new Pawn("♙", "BLACK", new Location(i, 6));
+               this.board[i][6] = new Pawn("♟", "BLACK", new Location(i, 6));
           }
 
           this.board[0][0] = new Rook("♜", "WHITE", new Location(0, 0));
