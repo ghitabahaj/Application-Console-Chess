@@ -77,7 +77,7 @@ public class Board {
                     return true;
                }
           }
-          return false; // Invalid move
+          return false;
      }
 
 
