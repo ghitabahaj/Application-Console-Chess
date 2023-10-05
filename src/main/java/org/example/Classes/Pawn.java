@@ -23,7 +23,7 @@ public class Pawn extends ChessPiece{
                     return true;
                 }
             }
-            // Capture diagonally
+
             else if (deltaX == 1 && deltaY == 1 && targetLocation.y > this.location.y) {
                 if (board.getPieceAt(targetLocation) != null) {
                     // Capture

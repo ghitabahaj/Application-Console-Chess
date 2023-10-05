@@ -2,9 +2,9 @@ package org.example;
 
 import org.example.Classes.ChessPiece;
 
+import java.util.List;
 import java.util.Scanner;
 import javax.swing.*;
-import java.awt.*;
 
 
 public class Menu {
@@ -89,22 +89,6 @@ public class Menu {
         this.wait("");
     }
 
-
-
-//    private void displayChessboard() {
-//        ChessPiece[][] board = b.getBoard();
-//        for (int row = 0; row < board.length; row++) {
-//            for (int col = 0; col < board[row].length; col++) {
-//                if (board[row][col] != null) {
-//                    System.out.print(board[row][col].getSymbol() + " ");
-//                } else {
-//                    System.out.print(". ");
-//                }
-//            }
-//            System.out.println();
-//        }
-//        this.wait("");
-//    }
 
     private void displayChessboard() {
         ChessPiece[][] board = b.getBoard();
@@ -209,6 +193,17 @@ public class Menu {
         return false;
     }
 
+    private boolean IsInCheck(String currentPlayerColor){
 
+
+        return false;
+
+    }
+
+    private List<ChessPiece> GetPlayerPieces(String currentPlayerColor){
+
+
+        return null;
+    }
 
 }
